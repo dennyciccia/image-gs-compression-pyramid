@@ -1,4 +1,4 @@
-# Image-GS Compression Cyramid
+# Image-GS Compression Pyramid
 
 Project developed for AI-assisted computer graphics class.
 
