@@ -17,7 +17,7 @@ Here is an example of a pyramid constructed by the algorithm:
 
 The algorithm works as follows:
 
-<img src="./assets/images/algorithm scheme.svg" width="75%">
+<img src="./assets/images/algorithm scheme.svg" width="100%">
 
 At iteration _i_, the image in the pyramid at level _i_ is reconstructed (Sum _i_) by adding the reconstruction at level _i-1_ (Sum _i-1_) to the residual at level _i_ (Residual _i_).  
 The residual is the difference between the image in the pyramid at level _i_ and the reconstruction at level _i-1_ (Sum _i-1_).  
