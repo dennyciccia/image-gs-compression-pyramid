@@ -14,7 +14,6 @@ Here is an example of a pyramid constructed by the algorithm:
 |   1   | <img src="./assets/images/valley.jpg" width="128"> |  2048x512  |
 |   2   | <img src="./assets/images/valley.jpg" width="256"> |  4096x1024 |
 |   3   | <img src="./assets/images/valley.jpg" width="512"> |  8192x2048 |
-||||
 
 The algorithm works as follows:
 
