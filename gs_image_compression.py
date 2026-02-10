@@ -144,16 +144,10 @@ def compute_residual(img_original, img_upsample, output_dir):
     
     diff = Image()
 
-    # --- new code ---
+    # Use float32 to avoid overflow during subtraction
     raw_diff = img_original.image_obj.astype(np.float32) - img_upsample.image_obj.astype(np.float32)
     offset_diff = (raw_diff / 2.0) + 128.0
     diff.image_obj = np.clip(offset_diff, 0, 255).astype(np.uint8)
-
-    # Use float32 to avoid overflow during subtraction
-    #diff.image_obj = img_original.image_obj.astype(np.float32) - img_upsample.image_obj.astype(np.float32)
-    
-    # Cut negative values to 0
-    #diff.image_obj = np.clip(diff.image_obj, 0, 255).astype(np.uint8)
     
     # Save in media folder
     output_path = f"{output_dir}/{img_original.name}_diff.png"
@@ -171,11 +165,7 @@ def compute_sum(img_detail, img_base, output_dir):
     else:
         img_base_upsample = img_base
 
-    # Sum with saturation (cv2.add)
-    #img_result = Image()
-    #img_result.image_obj = cv2.add(img_base_upsample.image_obj, img_detail.image_obj)
-
-    # --- new code ---
+    # Compute sum by restoring original range
     base_f = img_base_upsample.image_obj.astype(np.float32)
     detail_f = img_detail.image_obj.astype(np.float32)
     real_difference = (detail_f - 128.0) * 2.0
@@ -251,7 +241,6 @@ def main():
 
         print("Computing residual ...")
         diffs.append(compute_residual(pyramid[i], sums[i-1], f"{MEDIA_PATH}/{IMG_NAME}/{PARAMETERS}"))
-    
         print()
 
         print("Fitting residual using Image-GS ...")
