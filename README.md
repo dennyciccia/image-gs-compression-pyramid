@@ -1,4 +1,4 @@
-# Image-GS compression pyramid
+# Image-GS Compression Cyramid
 
 Project developed for AI-assisted computer graphics class.
 
@@ -24,7 +24,7 @@ At iteration _i_, the image in the pyramid at level _i_ is reconstructed (Sum _i
 The residual is the difference between the image in the pyramid at level _i_ and the reconstruction at level _i-1_ (Sum _i-1_).  
 At iteration _0_, the image at level _0_ in the pyramid is only fitted and upsampled using Image-GS, thus obtaining _Sum 0_.
 
-## Setup and run
+## Setup and Run
 
 Install Image-GS in main directory following their instructions [here](https://github.com/NYU-ICL/image-gs?tab=readme-ov-file#setup).  
 Place your images in the media folder, you need to have a folder structure like this:
