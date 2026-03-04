@@ -1,8 +1,18 @@
 # Image-GS Compression Pyramid
 
-Project developed for AI-assisted computer graphics class.
+Experimental project developed for AI-assisted computer graphics class.
 
 The goal is to implement a large image compression algorithm based on 2D Gaussian Splatting ([Image-GS](https://github.com/NYU-ICL/image-gs/)) using a pyramid approach. Instead of fitting a high-resolution image in a single pass, the system breaks down the image into multiple levels of detail, fitting the “differences” (residuals) between levels to optimize the representation of information.
+
+## Samples
+
+Here are some samples of the algorithm results, tested with four pyramid levels and 30000 gaussians.  
+Full images: [result_image-gs.png](./assets/images/result_image-gs.png), [result_pyramid.png](./assets/images/result_pyramid.png)
+
+| Image-GS | Pyramid approach | Image-GS | Pyramid approach |
+|:--------:|:----------------:|:--------:|:----------------:|
+| <img src="./assets/images/sample3.png" width="300"> | <img src="./assets/images/sample3_pyramid.png" width="300"> | <img src="./assets/images/sample2.png" width="300"> | <img src="./assets/images/sample2_pyramid.png" width="300"> |
+| <img src="./assets/images/sample1.png" width="300"> | <img src="./assets/images/sample1_pyramid.png" width="300"> | <img src="./assets/images/sample4.png" width="300"> | <img src="./assets/images/sample4_pyramid.png" width="300"> |
 
 ## Algorithm
 
